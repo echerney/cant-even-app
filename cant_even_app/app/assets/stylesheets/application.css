@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+  margin: 10px 0 0 0;
+ }
+
+
+
+#them{
+  display:none;
+}
+
+footer{
+  background-color: lightgrey;
+  height: 170px;
+  bottom: 0;
+  position: absolute;
+  width: 100vw;
+  text-align: center;
+}
+
+.card{
+  text-align: center;
+  border: black 1px solid;
+  border-radius: 8%;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}

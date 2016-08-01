@@ -10,6 +10,70 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+// = require jquery
 //= require jquery_ujs
 //= require_tree .
+
+//make input available if you're telling someone specific
+
+//ajax call to pull up 3 fuck off statements
+
+//display those
+
+//be able to save/delete the ones you like to a sidebar thing
+let option1 = ['this', 'that', 'everything', 'everyone', 'life', 'pink', 'thanks', 'bucket', 'family', 'zayn', 'single', 'looking'];
+let option2 = ['off', 'donut', 'shakespeare', 'linus', 'king', 'field', 'yoda', 'nugget', 'shutup','keep'];
+let option3 = 'madison';
+let option4 = ['bday', 'xmas', 'mornin', 'bye', 'zero']
+let builtUrl = ""
+
+$(document).ready(function() {
+
+  function checkFirstBox(){
+    if ($('#select1').val() === 'option2' || $('#select1').val() === 'option3') {
+      $('#them').fadeIn('fast')
+      $('#from').fadeIn('fast')
+      $('#submit').fadeIn('fast')
+    } else {
+      $('#them').fadeOut('fast')
+      $('#from').fadeIn('fast')
+      $('#submit').fadeIn('fast')
+    }
+  };
+
+  $('#select1').change(checkFirstBox);
+
+  function makeUrl(){
+    $('#results').empty();
+    if ($('#select1').val() === 'option1' ) {
+      builtUrl = "http://www.foaas.com/" + option1[Math.floor(Math.random() * option1.length)] + '/' + $('#from').val()
+    } else if ($('#select1').val() === 'option2' ) {
+      builtUrl = "http://www.foaas.com/" + option2[Math.floor(Math.random() * option2.length)] + '/' + $('#them').val() + '/' + $('#from').val()
+    } else if ($('#select1').val() === 'option3' ) {
+      builtUrl = "http://www.foaas.com/" + option3 + '/' + $('#them').val() + '/' + $('#from').val()
+    } else if ($('#select1').val() === 'option4' ) {
+      builtUrl = "http://www.foaas.com/" + option4[Math.floor(Math.random() * option4.length)] + '/' + $('#from').val()
+    }
+    console.log(builtUrl)
+    $.ajax({
+      url: builtUrl,
+      type: 'GET',
+      dataType: 'json',
+    })
+    .done(function(data) {
+      $('#results').append('<p>' + data.message + data.subtitle + '</p> <button id="save">Save this</button>');
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+  }
+
+  $('#submit').click(makeUrl)
+
+
+
+
+});
