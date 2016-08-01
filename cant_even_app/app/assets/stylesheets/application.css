@@ -34,10 +34,15 @@ footer{
 }
 
 .card{
+  font-size: 10px;
+  vertical-align: bottom;
+  top: 10px;
   text-align: center;
   border: black 1px solid;
   border-radius: 8%;
   width: 150px;
   height: 150px;
   margin: 10px;
+  display: inline-block;
+
 }
