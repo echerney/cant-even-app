@@ -82,8 +82,8 @@ $(document).ready(function() {
       dataType: 'json'
     })
     .done(function(data) {
-      data.forEach(quote=>{
-        $('footer').append('<div class="card"><p>' + quote.message + quote.subtitle + '</p><button>delete</button></div>')
+      data.forEach(function(quote, index){
+        $('footer').append('<div class="card"><p class="sMessage">' + quote.message + '</p> <p class="sSubtitle">' + quote.subtitle + '</p><button class="delete">delete</button></div>')
       });
     })
     .fail(function() {
@@ -106,9 +106,36 @@ function addQuote(){
   makeCards()
 }
 
+function removeQuote(){
+let card = $(this).parent()
+  let cardData = {
+    message: card.children()[0].innerHTML,
+    subtitle: card.children()[1].innerHTML
+  }
+  $.ajax({
+    url: '/quotes',
+    type: 'DELETE',
+    dataType: 'json',
+    data: cardData,
+  })
+  .done(function() {
+    console.log("success");
+  })
+  .fail(function() {
+    console.log("error");
+  })
+  .always(function() {
+    console.log("complete");
+  });
+
+}
+
+
+makeCards()
 $('#select1').change(checkFirstBox);
-$('#submit').click(makeUrl)
-$('#results').on('click', '#save', addQuote)
+$('#submit').click(makeUrl);
+$('#results').on('click', '#save', addQuote);
+$('footer').on('click', '.delete', removeQuote)
 
 
 
