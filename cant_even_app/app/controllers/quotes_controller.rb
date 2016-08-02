@@ -21,13 +21,8 @@ class QuotesController < ApplicationController
 
   def destroy
     pp params
-    deleted_quote = {
-      message: params[:message],
-      subtitle: params[:subtitle]
-    }
-
-
-    Quote.destroy(deleted_quote)
+    deleted_quote = Quote.find(params[:id])
+    deleted_quote.destroy
 
     render json: 'something'
   end

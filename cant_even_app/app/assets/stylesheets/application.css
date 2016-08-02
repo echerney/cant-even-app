@@ -15,9 +15,24 @@
  */
 
  body {
-  margin: 10px 0 0 0;
+  margin: 25px 0 0 0;
  }
 
+ *{
+  font-family: 'Merriweather', serif;
+ }
+
+#submit {
+  background-image: url("http://www.advancednutrients.com/wp-content/uploads/2014/03/organic-fruits-and-vegetables-give-health.jpg");
+  background-size: 100%;
+  color: white;
+  opacity: 0.6;
+  text-shadow: 1px 1px #000;
+}
+
+#submit:hover {
+  opacity: 1;
+}
 
 
 #them{
@@ -34,7 +49,10 @@ footer{
 }
 
 .card{
-  font-size: 10px;
+  background-image: url("http://www.advancednutrients.com/wp-content/uploads/2014/03/organic-fruits-and-vegetables-give-health.jpg");
+  background-opacity: 0.6;
+  background-position: center;
+  font-size: 12px;
   vertical-align: bottom;
   top: 10px;
   text-align: center;
@@ -44,12 +62,23 @@ footer{
   height: 150px;
   margin: 10px;
   display: inline-block;
+  color: white;
+  text-shadow: 2px 2px #000;
+  font-weight: 900;
 }
 
-#sMessage {
+.delete {
+  height: 30px;
+  line-height: 0;
+  padding: 0 20px;
+  color: white;
+}
+
+
+.sMessage {
   margin: 4px;
 }
 
-#sSubtitle {
+.sSubtitle {
   margin: 4px;
 }

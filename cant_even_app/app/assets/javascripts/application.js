@@ -21,7 +21,7 @@
 //display those
 
 //be able to save/delete the ones you like to a sidebar thing
-let option1 = ['this', 'that', 'everything', 'everyone', 'life', 'pink', 'thanks', 'bucket', 'family', 'zayn', 'single', 'looking'];
+let option1 = ['this', 'that', 'everything', 'everyone', 'life', 'pink', 'thanks', 'family', 'zayn', 'single', 'looking'];
 let option2 = ['off', 'donut', 'shakespeare', 'linus', 'king', 'field', 'yoda', 'nugget', 'shutup','keep'];
 let option3 = 'madison';
 let option4 = ['bday', 'xmas', 'mornin', 'bye', 'zero']
@@ -83,7 +83,7 @@ $(document).ready(function() {
     })
     .done(function(data) {
       data.forEach(function(quote, index){
-        $('footer').append('<div class="card"><p class="sMessage">' + quote.message + '</p> <p class="sSubtitle">' + quote.subtitle + '</p><button class="delete">delete</button></div>')
+        $('footer').append('<div class="card"><p class="sMessage">' + quote.message + '</p> <p class="sSubtitle">' + quote.subtitle + '</p><button class="delete d' + index + '">delete</button></div>')
       });
     })
     .fail(function() {
@@ -103,7 +103,7 @@ function addQuote(){
   $.post('/quotes', quoteData)
   .done(
     console.log("this worked!"))
-  makeCards()
+  setTimeout(makeCards, 500)
 }
 
 function removeQuote(){
@@ -112,11 +112,12 @@ let card = $(this).parent()
     message: card.children()[0].innerHTML,
     subtitle: card.children()[1].innerHTML
   }
+  let index = this.className.slice(8, 9)
+  let quote_id = parseInt(index) + 1
+  console.log(quote_id)
   $.ajax({
-    url: '/quotes',
-    type: 'DELETE',
-    dataType: 'json',
-    data: cardData,
+    url: '/quotes/' + quote_id,
+    type: 'DELETE'
   })
   .done(function() {
     console.log("success");
@@ -127,7 +128,7 @@ let card = $(this).parent()
   .always(function() {
     console.log("complete");
   });
-
+setTimeout(makeCards, 500)
 }
 
 
