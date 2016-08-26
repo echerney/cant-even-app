@@ -1,24 +1,3 @@
-# README
+# VOAAS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This was a small weekend project designed to learn ruby on rails, and is a "heathlier" version of the <a href="http://foaas.com/">FOAAS</a> api that had recently been designed. The app uses input from the users to design a randomized response of frustration/anger/general malaise about the world. This was my first use of ruby on rails to build a project start to finish.
