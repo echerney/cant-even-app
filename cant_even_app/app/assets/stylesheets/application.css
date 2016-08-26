@@ -1,0 +1,84 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ body {
+  margin: 25px 0 0 0;
+ }
+
+ *{
+  font-family: 'Merriweather', serif;
+ }
+
+#submit {
+  background-image: url("http://www.advancednutrients.com/wp-content/uploads/2014/03/organic-fruits-and-vegetables-give-health.jpg");
+  background-size: 100%;
+  color: white;
+  opacity: 0.6;
+  text-shadow: 1px 1px #000;
+}
+
+#submit:hover {
+  opacity: 1;
+}
+
+
+#them{
+  display:none;
+}
+
+footer{
+  background-color: lightgrey;
+  height: 170px;
+  bottom: 0;
+  position: absolute;
+  width: 100vw;
+  text-align: center;
+}
+
+.card{
+  background-image: url("http://www.advancednutrients.com/wp-content/uploads/2014/03/organic-fruits-and-vegetables-give-health.jpg");
+  background-opacity: 0.6;
+  background-position: center;
+  font-size: 12px;
+  vertical-align: bottom;
+  top: 10px;
+  text-align: center;
+  border: black 1px solid;
+  border-radius: 8%;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  display: inline-block;
+  color: white;
+  text-shadow: 2px 2px #000;
+  font-weight: 900;
+}
+
+.delete {
+  height: 30px;
+  line-height: 0;
+  padding: 0 20px;
+  color: white;
+}
+
+
+.sMessage {
+  margin: 4px;
+}
+
+.sSubtitle {
+  margin: 4px;
+}

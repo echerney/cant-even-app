@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VOAAS</title>
+<link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+  <%= stylesheet_link_tag "style.css" %>
+</head>
+<body>
+  <h1>Veggie Off As A Service</h1>
+  <p>A happier, healthier version of FOAAS.</p>
+  <label for="select1">What are you looking to express?</label>
+  <select id="select1">
+    <option value="option1">General anger at the world</option>
+    <option value="option2">I want to tell someone off</option>
+    <option value="option3">Someone's stupidity is ruining my life</option>
+    <option value="option4">None of the above</option>
+  </select>
+  <div id="fields">
+    <input id="them" type="text" placeholder="Their name"></input>
+    <input id="from" type="text" placeholder="Your name"></input>
+    <button id="submit">Submit</button>
+  </div>
+  <div id="results">
+  </div>
+  <footer id="saved">
+    <div class="card">
+      <p>This is where the saved ones will go</p>
+      <button>delete</button>
+    </div>
+  </footer>
+</body>
+</html>
