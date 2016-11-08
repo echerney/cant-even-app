@@ -63,11 +63,11 @@ $(document).ready(function() {
       let rand = Math.floor(Math.random() * veggies.length)
       let mess = data.message
       function saniMess(){
-        function capit(str){
+        function capitalize(str){
           return str.charAt(0).toUpperCase() + str.slice(1);
         }
         mess = mess.replace(/fuck/g, veggies[rand])
-        mess = mess.replace(/Fuck/g, capit(veggies[rand]))
+        mess = mess.replace(/Fuck/g, capitalize(veggies[rand]))
         return mess
       }
       let sanitized = saniMess()
