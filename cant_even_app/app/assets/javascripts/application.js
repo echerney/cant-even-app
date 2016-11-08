@@ -62,7 +62,15 @@ $(document).ready(function() {
       let veggies = ['broccoli', 'tomato', 'onion', 'squash', 'potato', 'beet', 'asparagus', 'peas', 'kale', 'cabbage']
       let rand = Math.floor(Math.random() * veggies.length)
       let mess = data.message
-      let sanitized = mess.replace(/fuck/gi, veggies[rand])
+      function saniMess(){
+        function capit(str){
+          return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+        mess = mess.replace(/fuck/g, veggies[rand])
+        mess = mess.replace(/Fuck/g, capit(veggies[rand]))
+        return mess
+      }
+      let sanitized = saniMess()
       $('#results').append('<p id="message">' + sanitized + '</p> <p id="subtitle">' + data.subtitle + '</p> <button id="save">Save this</button>');
     })
     .fail(function() {
