@@ -21,11 +21,11 @@
 //display those
 
 //be able to save/delete the ones you like to a sidebar thing
-let option1 = ['this', 'that', 'everything', 'everyone', 'life', 'pink', 'thanks', 'family', 'zayn', 'single', 'looking'];
-let option2 = ['off', 'donut', 'shakespeare', 'linus', 'king', 'field', 'yoda', 'nugget', 'shutup','keep'];
-let option3 = 'madison';
-let option4 = ['bday', 'xmas', 'mornin', 'bye', 'zero']
-let builtUrl = ""
+var option1 = ['this', 'that', 'everything', 'everyone', 'life', 'pink', 'thanks', 'family', 'zayn', 'single', 'looking'];
+var option2 = ['off', 'donut', 'shakespeare', 'linus', 'king', 'field', 'yoda', 'nugget', 'shutup','keep'];
+var option3 = 'madison';
+var option4 = ['bday', 'xmas', 'mornin', 'bye', 'zero']
+var builtUrl = ""
 
 $(document).ready(function() {
 
@@ -39,7 +39,7 @@ $(document).ready(function() {
       $('#from').fadeIn('fast')
       $('#submit').fadeIn('fast')
     }
-  };
+  }
 
   function makeUrl(){
     $('#results').empty();
@@ -59,9 +59,9 @@ $(document).ready(function() {
       dataType: 'json',
     })
     .done(function(data) {
-      let veggies = ['broccoli', 'tomato', 'onion', 'squash', 'potato', 'beet', 'asparagus', 'peas', 'kale', 'cabbage']
-      let rand = Math.floor(Math.random() * veggies.length)
-      let mess = data.message
+      var veggies = ['broccoli', 'tomato', 'onion', 'squash', 'potato', 'beet', 'asparagus', 'peas', 'kale', 'cabbage']
+      var rand = Math.floor(Math.random() * veggies.length)
+      var mess = data.message
       function saniMess(){
         function capitalize(str){
           return str.charAt(0).toUpperCase() + str.slice(1);
@@ -70,7 +70,7 @@ $(document).ready(function() {
         mess = mess.replace(/Fuck/g, capitalize(veggies[rand]))
         return mess
       }
-      let sanitized = saniMess()
+      var sanitized = saniMess()
       $('#results').append('<p id="message">' + sanitized + '</p> <p id="subtitle">' + data.subtitle + '</p> <button id="save">Save this</button>');
     })
     .fail(function() {
@@ -103,7 +103,7 @@ $(document).ready(function() {
   }
 
 function addQuote(){
-  let quoteData = {
+  var quoteData = {
     message: $('#message').text(),
     subtitle: $('#subtitle').text()
   }
@@ -115,13 +115,13 @@ function addQuote(){
 }
 
 function removeQuote(){
-let card = $(this).parent()
-  let cardData = {
-    message: card.children()[0].innerHTML,
-    subtitle: card.children()[1].innerHTML
-  }
-  let index = this.className.slice(8, 9)
-  let quote_id = parseInt(index) + 1
+var card = $(this).parent()
+  // var cardData = {
+  //   message: card.children()[0].innerHTML,
+  //   subtitle: card.children()[1].innerHTML
+  // }
+  var index = this.className.slice(8, 9)
+  var quote_id = parseInt(index) + 1
   console.log(quote_id)
   $.ajax({
     url: '/quotes/' + quote_id,
