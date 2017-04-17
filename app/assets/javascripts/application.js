@@ -44,13 +44,13 @@ $(document).ready(function() {
   function makeUrl(){
     $('#results').empty();
     if ($('#select1').val() === 'option1' ) {
-      builtUrl = "http://www.foaas.com/" + option1[Math.floor(Math.random() * option1.length)] + '/' + $('#from').val()
+      builtUrl = "https://www.foaas.com/" + option1[Math.floor(Math.random() * option1.length)] + '/' + $('#from').val()
     } else if ($('#select1').val() === 'option2' ) {
-      builtUrl = "http://www.foaas.com/" + option2[Math.floor(Math.random() * option2.length)] + '/' + $('#them').val() + '/' + $('#from').val()
+      builtUrl = "https://www.foaas.com/" + option2[Math.floor(Math.random() * option2.length)] + '/' + $('#them').val() + '/' + $('#from').val()
     } else if ($('#select1').val() === 'option3' ) {
-      builtUrl = "http://www.foaas.com/" + option3 + '/' + $('#them').val() + '/' + $('#from').val()
+      builtUrl = "https://www.foaas.com/" + option3 + '/' + $('#them').val() + '/' + $('#from').val()
     } else if ($('#select1').val() === 'option4' ) {
-      builtUrl = "http://www.foaas.com/" + option4[Math.floor(Math.random() * option4.length)] + '/' + $('#from').val()
+      builtUrl = "https://www.foaas.com/" + option4[Math.floor(Math.random() * option4.length)] + '/' + $('#from').val()
     }
     console.log(builtUrl)
     $.ajax({
