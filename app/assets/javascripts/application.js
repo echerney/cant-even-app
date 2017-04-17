@@ -116,10 +116,6 @@ function addQuote(){
 
 function removeQuote(){
 var card = $(this).parent()
-  // var cardData = {
-  //   message: card.children()[0].innerHTML,
-  //   subtitle: card.children()[1].innerHTML
-  // }
   var index = this.className.slice(8, 9)
   var quote_id = parseInt(index) + 1
   console.log(quote_id)
